@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 import java.awt.*;
-public class ObjFileJsonLoader {
+public class Model3dScratchLoader {
 
     public static final String MODEL_3D_NAME = "cat.obj";
     public static final double MDOEL_SCALE = 10;
