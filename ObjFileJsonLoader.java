@@ -68,7 +68,7 @@ public class ObjFileJsonLoader {
         scanner.useDelimiter("],");
         firstPart.add("]," + scanner.next());
         String theRest = scanner.next();
-        scanner.useDelimiter(" ");
+        scanner.useDelimiter("\n");
         while (scanner.hasNext())
         {
             theRest += scanner.next();
