@@ -183,7 +183,7 @@ public class ObjFileJsonLoader {
                     lineTokens.nextToken();
                     //create the Vector3 object
 
-                    Vector3 vertexCoordinate = new Vector3(Double.parseDouble(lineTokens.nextToken()), Double.parseDouble(lineTokens.nextToken()), Double.parseDouble(lineTokens.nextToken()));
+                    Vector3 vertexCoordinate = new Vector3(Double.parseDouble(lineTokens.nextToken())*scale, Double.parseDouble(lineTokens.nextToken())*scale, Double.parseDouble(lineTokens.nextToken())*scale);
 
                     //adds the Vector3 to the array of vertices
                     vertices.add(vertexCoordinate);
