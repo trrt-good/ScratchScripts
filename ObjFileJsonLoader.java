@@ -3,8 +3,8 @@ import java.io.*;
 import java.awt.*;
 public class ObjFileJsonLoader {
 
-    public static final String MODEL_3D_NAME = "cube.obj";
-    public static final double MDOEL_SCALE = 1;
+    public static final String MODEL_3D_NAME = "cat.obj";
+    public static final double MDOEL_SCALE = 10;
 
     public static final String JSON_FILE_NAME = "project.json";
 
@@ -108,42 +108,42 @@ public class ObjFileJsonLoader {
         stringBuilder.append(String.format("\"%f\"", x1List.get(x1List.size()-1)));
         stringBuilder.append("]],\"" + hashes.get(7) + ":[\"" + LIST_NAMES[1] + "\",[");
         
-        for (int i = 0; i < x1List.size()-1; i ++)
+        for (int i = 0; i < y1List.size()-1; i ++)
             stringBuilder.append(String.format("\"%f\",", y1List.get(i)));
         stringBuilder.append(String.format("\"%f\"", y1List.get(y1List.size()-1)));
         stringBuilder.append("]],\"" + hashes.get(6) + ":[\"" + LIST_NAMES[2] + "\",[");
         
-        for (int i = 0; i < x1List.size()-1; i ++)
+        for (int i = 0; i < x2List.size()-1; i ++)
             stringBuilder.append(String.format("\"%f\",", x2List.get(i)));
         stringBuilder.append(String.format("\"%f\"", x2List.get(x2List.size()-1)));
         stringBuilder.append("]],\"" + hashes.get(5) + ":[\"" + LIST_NAMES[3] + "\",[");
         
-        for (int i = 0; i < x1List.size()-1; i ++)
+        for (int i = 0; i < y2List.size()-1; i ++)
             stringBuilder.append(String.format("\"%f\",", y2List.get(i)));
         stringBuilder.append(String.format("\"%f\"", y2List.get(y2List.size()-1)));
         stringBuilder.append("]],\"" + hashes.get(4) + ":[\"" + LIST_NAMES[4] + "\",[");
         
-        for (int i = 0; i < x1List.size()-1; i ++)
+        for (int i = 0; i < x3List.size()-1; i ++)
             stringBuilder.append(String.format("\"%f\",", x3List.get(i)));
         stringBuilder.append(String.format("\"%f\"", x3List.get(x3List.size()-1)));
         stringBuilder.append("]],\"" + hashes.get(3) + ":[\"" + LIST_NAMES[5] + "\",[");
         
-        for (int i = 0; i < x1List.size()-1; i ++)
+        for (int i = 0; i < y3List.size()-1; i ++)
             stringBuilder.append(String.format("\"%f\",", y3List.get(i)));
         stringBuilder.append(String.format("\"%f\"", y3List.get(y3List.size()-1)));
         stringBuilder.append("]],\"" + hashes.get(2) + ":[\"" + LIST_NAMES[6] + "\",[");
         
-        for (int i = 0; i < x1List.size()-1; i ++)
+        for (int i = 0; i < z1List.size()-1; i ++)
             stringBuilder.append(String.format("\"%f\",", z1List.get(i)));
         stringBuilder.append(String.format("\"%f\"", z1List.get(z1List.size()-1)));
         stringBuilder.append("]],\"" + hashes.get(1) + ":[\"" + LIST_NAMES[7] + "\",[");
 
-        for (int i = 0; i < x1List.size()-1; i ++)
+        for (int i = 0; i < z2List.size()-1; i ++)
             stringBuilder.append(String.format("\"%f\",", z2List.get(i)));
         stringBuilder.append(String.format("\"%f\"", z2List.get(z2List.size()-1)));
         stringBuilder.append("]],\"" + hashes.get(0) + ":[\"" + LIST_NAMES[8] + "\",[");
         
-        for (int i = 0; i < x1List.size()-1; i ++)
+        for (int i = 0; i < z3List.size()-1; i ++)
             stringBuilder.append(String.format("\"%f\",", z3List.get(i)));
         stringBuilder.append(String.format("\"%f\"", z3List.get(z3List.size()-1)));
         stringBuilder.append("]],");
@@ -219,15 +219,15 @@ public class ObjFileJsonLoader {
                     for (int i = 0; i < coordinateIndexes.length - 2; i ++)
                     {   
                         x1List.add(vertices.get(coordinateIndexes[0]).x);
-                        y1List.add(vertices.get(coordinateIndexes[0]).x);
-                        z1List.add(vertices.get(coordinateIndexes[0]).x);
+                        y1List.add(vertices.get(coordinateIndexes[0]).y);
+                        z1List.add(vertices.get(coordinateIndexes[0]).z);
 
-                        x2List.add(vertices.get(coordinateIndexes[i+1]).y);
+                        x2List.add(vertices.get(coordinateIndexes[i+1]).x);
                         y2List.add(vertices.get(coordinateIndexes[i+1]).y);
-                        z2List.add(vertices.get(coordinateIndexes[i+1]).y);
+                        z2List.add(vertices.get(coordinateIndexes[i+1]).z);
 
-                        x3List.add(vertices.get(coordinateIndexes[i+2]).z);
-                        y3List.add(vertices.get(coordinateIndexes[i+2]).z);
+                        x3List.add(vertices.get(coordinateIndexes[i+2]).x);
+                        y3List.add(vertices.get(coordinateIndexes[i+2]).y);
                         z3List.add(vertices.get(coordinateIndexes[i+2]).z);
                         // textureCoords.get(textureIndexes[0]),
                         // textureCoords.get(textureIndexes[i+1]),
